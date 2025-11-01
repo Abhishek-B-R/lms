@@ -63,7 +63,13 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ cou
     })
 
     return NextResponse.json({ url: session.url })
-  } catch {
-    return new NextResponse('Internal server error', { status: 500 })
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log('[CHECKOUT_ERROR]', error);
+    return new NextResponse(
+      error instanceof Error ? error.message : 'Internal server error',
+      { status: 500 }
+    );
   }
+
 }
