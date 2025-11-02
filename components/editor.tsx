@@ -14,7 +14,7 @@ export const Editor = ({ onChange, value }: EditorProps) => {
   const ReactQuill = useMemo(() => dynamic(() => import('react-quill-new'), { ssr: false }), [])
 
   return (
-    <div className="bg-white">
+    <div className="bg-background">
       <ReactQuill theme="snow" value={value} onChange={onChange} />
     </div>
   )
