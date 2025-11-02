@@ -62,6 +62,13 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ cou
       },
     })
 
+    await db.purchase.create({
+      data: {
+        userId: user.id,
+        courseId: course.id,
+      },
+    })
+
     return NextResponse.json({ url: session.url })
   } catch (error) {
     // eslint-disable-next-line no-console
