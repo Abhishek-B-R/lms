@@ -7,6 +7,7 @@ import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
 import { SearchInput } from './search-input'
+import { ThemeToggle } from './theme-toggle'
 import { isTeacher } from '@/lib/teacher'
 
 export const NavbarRoutes = () => {
@@ -40,6 +41,7 @@ export const NavbarRoutes = () => {
             </Button>
           </Link>
         ) : null}
+        <ThemeToggle />
         <UserButton />
       </div>
     </>

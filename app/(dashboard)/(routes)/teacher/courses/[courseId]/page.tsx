@@ -66,7 +66,7 @@ const CourseIdPage = async ({ params }: CourseIdPageProps) => {
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-y-2">
             <h1 className="text-2xl font-medium">Course setup</h1>
-            <span className="text-sm text-slate-700">Complete all fields {completionText}</span>
+            <span className="text-sm text-muted-foreground">Complete all fields {completionText}</span>
           </div>
           <Actions disabled={!isComplete} courseId={resolvedParams.courseId} isPublished={course.isPublished} />
         </div>
