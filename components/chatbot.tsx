@@ -98,7 +98,7 @@ export default function ChatBot() {
 
       {/* Chat Modal */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-40 w-96 max-w-[calc(100vw-2rem)] bg-card border border-border rounded-lg shadow-xl flex flex-col h-96 max-h-[calc(100vh-8rem)]">
+        <div className="fixed bottom-24 right-6 z-40 w-96 max-w-[calc(100vw-2rem)] bg-card border border-border rounded-lg shadow-xl flex flex-col h-96 max-h-[900px]">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-border bg-primary/10">
             <div className="flex items-center gap-2">

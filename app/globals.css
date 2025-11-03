@@ -39,16 +39,40 @@ body,
     --ring: 222.2 84% 4.9%;
  
     --radius: 0.5rem;
+    
+    /* Enhanced Futuristic Colors for Light Mode */
+    --accent-cyan: 187 100% 42%;
+    --accent-cyan-foreground: 0 0% 100%;
+    --accent-purple: 270 60% 55%;
+    --accent-purple-foreground: 0 0% 100%;
+    
+    --gradient-start: 187 100% 42%;
+    --gradient-end: 270 60% 55%;
+    
+    --surface-elevated: 210 40% 98%;
+    --surface-hover: 210 40% 96%;
+    --border-accent: 187 100% 42%;
+    
+    --glow-cyan: 187 100% 42%;
+    --glow-purple: 270 60% 55%;
+    
+    /* Semantic colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
   }
  
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222.2 47% 11%;
     --foreground: 210 40% 98%;
  
-    --card: 222.2 84% 4.9%;
+    --card: 222.2 47% 11%;
     --card-foreground: 210 40% 98%;
  
-    --popover: 222.2 84% 4.9%;
+    --popover: 222.2 47% 11%;
     --popover-foreground: 210 40% 98%;
  
     --primary: 210 40% 98%;
@@ -65,10 +89,34 @@ body,
  
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
- 
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+    
+    /* Enhanced Dark Mode Futuristic Colors */
+    --accent-cyan: 187 100% 50%;
+    --accent-cyan-foreground: 222.2 84% 4.9%;
+    --accent-purple: 270 70% 65%;
+    --accent-purple-foreground: 222.2 84% 4.9%;
+    
+    --gradient-start: 187 100% 50%;
+    --gradient-end: 270 70% 65%;
+    
+    --surface-elevated: 217.2 32.6% 15%;
+    --surface-hover: 217.2 32.6% 20%;
+    --border-accent: 187 100% 50%;
+    
+    --glow-cyan: 187 100% 50%;
+    --glow-purple: 270 70% 65%;
+    
+    /* Semantic colors for dark mode */
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 60%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 89% 58%;
+    --info-foreground: 0 0% 100%;
   }
 }
  
@@ -78,6 +126,60 @@ body,
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-cyan to-accent-purple bg-clip-text text-transparent;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-r from-accent-cyan to-accent-purple;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/70 dark:bg-slate-900/70 border border-white/20 dark:border-slate-700/50;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-sm bg-white/80 dark:bg-slate-900/80 border border-white/30 dark:border-slate-700/30;
+  }
+  
+  .glow-cyan {
+    box-shadow: 0 0 20px hsl(var(--glow-cyan) / 0.3);
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 20px hsl(var(--glow-purple) / 0.3);
+  }
+  
+  .glow-cyan-sm {
+    box-shadow: 0 0 10px hsl(var(--glow-cyan) / 0.2);
+  }
+  
+  .glow-purple-sm {
+    box-shadow: 0 0 10px hsl(var(--glow-purple) / 0.2);
+  }
+  
+  .card-elevated {
+    @apply bg-surface-elevated border-border/50 shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .border-gradient {
+    border-image: linear-gradient(to right, hsl(var(--accent-cyan)), hsl(var(--accent-purple))) 1;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  
+  .interactive-scale {
+    @apply transition-transform duration-200 active:scale-95;
   }
 }
 

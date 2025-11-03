@@ -3,11 +3,11 @@ import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
 
-const backgroundVariants = cva('rounded-full flex items-center justify-center', {
+const backgroundVariants = cva('rounded-full flex items-center justify-center transition-all duration-300', {
   variants: {
     variant: {
-      default: 'bg-sky-100',
-      success: 'bg-emerald-100',
+      default: 'bg-accent-cyan/10 hover:bg-accent-cyan/20 hover:shadow-glow-cyan-sm dark:bg-accent-cyan/20',
+      success: 'bg-emerald-100 hover:bg-emerald-200 dark:bg-emerald-900/30',
     },
     size: {
       default: 'p-2',
@@ -20,11 +20,11 @@ const backgroundVariants = cva('rounded-full flex items-center justify-center', 
   },
 })
 
-const iconVariants = cva('', {
+const iconVariants = cva('transition-all duration-300', {
   variants: {
     variant: {
-      default: 'text-sky-700',
-      success: 'text-emerald-700',
+      default: 'text-accent-cyan drop-shadow-[0_0_4px_rgba(0,188,212,0.3)]',
+      success: 'text-emerald-700 dark:text-emerald-400',
     },
     size: {
       default: 'h-8 w-8',

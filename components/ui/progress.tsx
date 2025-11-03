@@ -6,11 +6,11 @@ import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
 
-const progressVariants = cva('h-full w-full flex-1 bg-primary transition-all', {
+const progressVariants = cva('h-full w-full flex-1 bg-primary transition-all duration-500 rounded-full', {
   variants: {
     variant: {
-      default: 'bg-sky-600',
-      success: 'bg-emerald-700',
+      default: 'bg-gradient-to-r from-accent-cyan to-accent-purple shadow-glow-cyan-sm',
+      success: 'bg-emerald-600 dark:bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.3)]',
     },
   },
   defaultVariants: {
@@ -26,7 +26,7 @@ const Progress = React.forwardRef<React.ElementRef<typeof ProgressPrimitive.Root
   ({ className, value, variant, ...props }, ref) => (
     <ProgressPrimitive.Root
       ref={ref}
-      className={cn('relative h-4 w-full overflow-hidden rounded-full bg-secondary', className)}
+      className={cn('relative h-4 w-full overflow-hidden rounded-full bg-secondary dark:bg-secondary/50 shadow-inner', className)}
       {...props}
     >
       <ProgressPrimitive.Indicator
